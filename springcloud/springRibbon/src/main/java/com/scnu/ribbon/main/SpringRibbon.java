@@ -19,6 +19,7 @@ import org.springframework.web.client.RestTemplate;
 @SpringBootApplication
 @EnableDiscoveryClient
 public class SpringRibbon {
+	//@LoadBalanced 客户端负载均衡
 	@Bean
 	@LoadBalanced
 	RestTemplate restTemplate() {
