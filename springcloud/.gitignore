@@ -1,0 +1,21 @@
+# Created by .ignore support plugin (hsz.mobi)
+.idea
+*.iml
+.idea*
+.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_1_3_5_RELEASE.xml
+.idea/misc.xml
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/vcs.xml
+.idea/libraries
+*.a       # 忽略所有 .a 结尾的文件
+!lib.a    # 但 lib.a 除外
+/TODO     # 仅仅忽略项目根目录下的 TODO 文件，不包括 subdir/TODO
+build/    # 忽略 build/ 目录下的所有文件
+doc/*.txt # 会忽略 doc/notes.txt 但不包括 doc/server/arch.txt
+*.Maven*
+out
+gen### Java template
+*.class
+*.log
+
