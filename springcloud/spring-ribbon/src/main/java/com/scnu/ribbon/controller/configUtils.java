@@ -1,4 +1,4 @@
-package com.glocalme.css.common.utils;
+package com.scnu.ribbon.controller;
 
 import java.io.IOException;
 import java.net.URL;
