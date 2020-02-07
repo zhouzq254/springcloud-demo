@@ -1,4 +1,4 @@
-package com.scnu.service;
+package com.scnu.service.kafka;
 
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 

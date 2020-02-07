@@ -1,4 +1,4 @@
-package com.scnu.service;
+package com.scnu.service.kafka;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,9 +20,8 @@ public class SpringKafkaProducer<K,T> {
 
     public void send(final String topic, final String message)
     {
-        ListenableFuture future = this.kafkaTemplate.send(topic, message);
-
-        future.addCallback(new ListenableFutureCallback()
+        ListenableFuture<SendResult<String, String>> future = this.kafkaTemplate.send(topic, message);
+        future.addCallback(new ListenableFutureCallback<SendResult<String, String>>()
         {
             public void onSuccess(SendResult<String, String> message)
             {
@@ -39,7 +38,7 @@ public class SpringKafkaProducer<K,T> {
     public void send(final String topic, String key, final String message)
     {
         ListenableFuture future = this.kafkaTemplate.send(topic, key, message);
-        future.addCallback(new ListenableFutureCallback()
+        future.addCallback(new ListenableFutureCallback<SendResult<String, String>>()
         {
             public void onSuccess(SendResult<String, String> message)
             {

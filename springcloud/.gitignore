@@ -18,4 +18,5 @@ out
 gen### Java template
 *.class
 *.log
+target
 

@@ -1,4 +1,4 @@
-package com.scnu.service;
+package com.scnu.service.kafka;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
@@ -49,7 +49,7 @@ public abstract class AbstractMessageExecutor <K, V>
                     try {
                         messageExecutor.execute(Arrays.asList(new ConsumerRecord[] { consumerRecord }));
                     } catch (Exception e) {
-                       log.error("execute error,topic:{},data:{}", new Object[] { topic, consumerRecord.value(), e });
+                        log.error("execute error,topic:{},data:{}", new Object[] { topic, consumerRecord.value(), e });
                     }
                 }
             });

@@ -122,7 +122,7 @@
 		<module>spring-ribbon</module>
         <module>spring-zipkin</module>
     </modules>
-
+<!--
 	<build>
 		<plugins>
 			<plugin>
@@ -144,7 +144,7 @@
 			</plugin>
 		</plugins>
 		<resources>
-			<!-- 打jar包时排除文件 -->
+
 			<resource>
 				<directory>src/main/resources</directory>
 				<filtering>true</filtering>
@@ -155,4 +155,5 @@
 			</resource>
 		</resources>
 	</build>
+-->
 </project>
