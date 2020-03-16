@@ -1,11 +1,13 @@
 package com.scnu.ribbon.main;
 
+import com.scnu.ribbon.config.ApplicationContextUtils;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.web.client.RestTemplate;
 /**
  * @SpringBootApplication
@@ -18,6 +20,7 @@ import org.springframework.web.client.RestTemplate;
 @ComponentScan("com.scnu.ribbon")
 @SpringBootApplication
 @EnableDiscoveryClient
+@EnableAspectJAutoProxy
 public class SpringRibbon {
 	//@LoadBalanced 客户端负载均衡
 	@Bean
@@ -28,5 +31,8 @@ public class SpringRibbon {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringRibbon.class, args);
+
+
+
 	}
 }
