@@ -16,7 +16,7 @@ public class SpringKafkaProducer<K,T> {
     private static final String TAG = "[SpringKafkaProducer]=>";
 
     @Autowired
-    private KafkaTemplate<String, String> kafkaTemplate;
+    private KafkaTemplate kafkaTemplate;
 
     public void send(final String topic, final String message)
     {
@@ -25,7 +25,7 @@ public class SpringKafkaProducer<K,T> {
         {
             public void onSuccess(SendResult<String, String> message)
             {
-                SpringKafkaProducer.log.debug("[SpringKafkaProducer]=> Sent message= " + (String)message.getProducerRecord().value() + "with topic= " + message.getProducerRecord().topic() + " and offset= " + message.getRecordMetadata().offset());
+                log.debug("[SpringKafkaProducer]=> Sent message= " + (String)message.getProducerRecord().value() + "with topic= " + message.getProducerRecord().topic() + " and offset= " + message.getRecordMetadata().offset());
             }
 
             public void onFailure(Throwable throwable)
